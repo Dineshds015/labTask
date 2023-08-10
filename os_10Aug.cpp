@@ -53,6 +53,29 @@ void popFront()
 		delete t;
 	}
 }
+void popPos(int pos)
+{
+	if(head==NULL)
+		cout<<"List is Empty";
+	else
+	{
+		int i=1;
+		while(i!=pos)
+		{
+			temp=temp->next;
+			i++;
+			if(temp==tail)
+			{
+				cout<<"Position is greater than List";
+				return;
+			}
+		}
+		node *t=temp;
+		temp->prev=t->next;
+		t->next->prev=t->prev;
+		delete t;
+	}
+}
 void popBack()
 {
 	if(head==NULL)
@@ -114,7 +137,7 @@ int main()
 {
 	int choice,val;
 	do{
-		cout<<"\n1.Insert Start  /  2.Insert Position  /  3.Insert End  /  4.Delete Front  /  5.Delete Back\n";
+		cout<<"\n1.Insert Start  /  2.Insert Position  /  3.Insert End  /  4.Delete Front  /  5.Delete Back  /  6.Delete Front\n";
 		cin>>choice;
 		switch(choice)
 		{
@@ -145,8 +168,14 @@ int main()
 				popBack();
 				printList();
 				break;
+			case 6:
+				cout<<"Enter pos:";
+				cin>>val;
+				popPos(val);
+				printList();
+				break;
 		}
-	}while(choice<=5);
+	}while(choice<=6);
 	printList();
 	return 0;
 }
