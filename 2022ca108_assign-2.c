@@ -1,6 +1,6 @@
-// C program to store time taken by bubble sort,
-// insertion sort and selection sort
-// for sorting exactly same arrays.
+//Name : Dinesh Suthar 
+//regNo : 2022ca108
+//Aim : plot the graph using GNUPLOT and determine the Time Complexity of each of sorting techniques.
 
 #include <stdio.h>
 #include <stdlib.h>
